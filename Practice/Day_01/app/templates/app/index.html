@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- length -->
+    <h3>Length : {{ value | length }}</h3>
+
+    <!-- add -->
+    <h3>Add: {{ plus | add:"5" }}</h3>
+
+    <!-- addslashes-->
+    <h3>Addslashes: {{ value | addslashes }}</h3>
+
+    <!-- capitalize first letter -->
+    <h3>Capitalize: {{ "i can do it" | capfirst }}</h3>
+
+    <!-- center  -->
+    <h3>Center: {{ "Let's see what can i do!" | center:"20" }}</h3>
+
+    <!-- cut -->
+    <h3>Cut: {{ value | cut:" " }}</h3>
+
+    <!-- date -->
+    <h3>Date: {{ Date | date:"D d M Y" }}</h3>
+
+    <!-- default -->
+    <h3>Default: {{ "" | default:"nothing" }}</h3>
+
+    <!-- dicsort -->
+    <h3>Dictsort: {{ person | dictsort:"age" }}</h3>
+
+    <!-- divisibleby -->
+    <h3>Divisibleby: {{ number | divisibleby:"5" }}</h3>
+
+    <!-- escape -->
+    {% autoescape off %}
+    <h3>Before Escape: {{ string | escape }}</h3>
+    <h3>After Escape: {{string}}</h3>
+    <p> Escaping html tag</p>
+    {% endautoescape %}
+
+    <!-- filesizeformat -->
+    <h3>Filesizeformat: {{ filesize | filesizeformat }}</h3>
+
+    <!-- first -->
+    <h3>First : {{ person | first }}</h3>
+
+    <!-- last-->
+    <h3>Last: {{ person | last }}</h3>
+
+    <!-- join -->
+    <h3>Join: {{ list | join:" ||| " }}</h3>
+
+    <!-- line Number-->
+    <h3>Line Number: <br> {{ line  | linenumbers }}</h3>
+
+    <!-- lower -->
+    <h3>Lower: {{ "I CAN SURVIVE" | lower }}</h3>
+
+    <!-- upper -->
+    <h3>Upper: {{ "i can survive" | upper }}</h3>
+
+    <!-- make a list-->
+    <h3>Make List: {{ "String" | make_list }}</h3>
+
+    <!-- random -->
+    <h3>Random: {{  "['S', 't', 'r', 'i', 'n', 'g']" | random }}</h3>
+
+    <!-- slice -->
+    <h3>Slice: {{ value | slice:"5" }}</h3>
+
+    <!-- slugify -->
+    <h3>Slugify: {{ "Let's see what can i do" | slugify }}</h3>
+
+    <!-- time -->
+    <h3>Time: {{ Date | time:"H:i:s" }}</h3>
+
+    
+
+     <!-- timesince -->
+     <h3>First Date : {{ first_date }} & Last Date : {{ last_date }}</h3>
+     <h3>Timesince: {{ first_date | timesince:last_date }}</h3>
+
+     <!-- title  -->
+     <h3>Title: {{ "let's see what can i do" | title }}</h3>
+
+     <!-- unordered_list -->
+     <h3>Unordered List: {{ list | unordered_list }}</h3>
+     
+     <!-- wordcount-->
+     <h3>{{ "Let's see what can i do"}} <br> Wordcount:  {{ "Let's see what can i do" | wordcount }}</h3>
+</body>
+
+</html>
