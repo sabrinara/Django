@@ -37,6 +37,6 @@ def index(request):
     return render(request, 'index.html', {'data': data}) # dictionary (data)
 
 
-def about(request,id):
-    # print( request.GET)
-    return render(request, 'index.html', {'id' : id})
+def about(request):
+    print( request.GET)
+    return render(request, 'index.html', {'id' : request.GET})
