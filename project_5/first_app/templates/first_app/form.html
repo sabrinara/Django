@@ -1,27 +1,42 @@
-{% extends 'base.html' %}
+{% extends 'base.html '%} {% block content %}
 
-{% block content %}
-
-<form method="post" action="/about/">
+<div style="width: 50%; height: 500px; margin: auto" class="pt-5">
+  <h3>Movie Rating Form</h3>
+  <form method="get">
+    <!-- to make get request, where data doesn't need to be secure. shows into url -->
+  <!-- <form method="post" action="/about/">  -->
+     <!-- to make a post request, where data need to be secure. doesn't shows into url-->
     {% csrf_token %}
     <div class="mb-3">
       <label for="exampleInputName" class="form-label">Name</label>
-      <input type=" text" class="form-control" id="exampleInputName" aria-describedby="nameHelp" name="username">
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputName"
+        aria-describedby="nameHelp"
+        name="username"
+      />
     </div>
     <div class="mb-3">
-      <label for="exampleInputEmail" class="form-label">Email Address</label>
-      <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" name="email">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        name="email"
+      />
     </div>
-    <!-- <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div> -->
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <select class="form-select" aria-label="Default select example" name="select">
+      <option selected>Ratings</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <button type="submit" class="btn btn-primary mt-5">Submit</button>
   </form>
+</div>
 
- 
-  {% endblock %}
+{%endblock%}
