@@ -1,4 +1,5 @@
 from django import forms
+from django.core import validators
 
 # widgets == field to html input 
 class contactForm(forms.Form):
@@ -15,3 +16,43 @@ class contactForm(forms.Form):
     size = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
     MEAL = [ ('B', 'Beef'), ('P', 'Pepperoni'), ('M', 'Mashroom')]
     pizza = forms.MultipleChoiceField(choices=MEAL, widget=forms.CheckboxSelectMultiple)
+
+    
+# class StudentData(forms.Form):
+#     name = forms.CharField(widget=forms.TextInput)
+#     email = forms.CharField(widget=forms.EmailInput)
+
+    # def clean_name(self):
+    #     valname = self.cleaned_data['name']
+    #     if len(valname) < 10:
+    #         raise forms.ValidationError('Name is too short')
+    #     return valname
+    # def clean_email(self):
+    #     valemail = self.cleaned_data['email']
+    #     if '.com' not in valemail:
+    #         raise forms.ValidationError('Email must contain .com')
+    #     return valemail
+
+    # def clean(self):
+    #     cleaned_data = super().clean()
+    #     valname = self.cleaned_data['name']
+    #     valemail = self.cleaned_data['email']
+    #     if len(valname) < 10:
+    #         raise forms.ValidationError('Name is too short')
+    #     if '.com' not in valemail:
+    #         raise forms.ValidationError('Email must contain .com')
+
+
+def length_check(value):
+    if len(value) < 10:
+        raise forms.ValidationError('At least 10 characters')
+
+class StudentData(forms.Form):
+    name = forms.CharField(validators=[validators.MinLengthValidator(10, message="Name is at least 10 characters")])
+    text = forms.CharField(widget=forms.TextInput, validators=[length_check])
+    email = forms.CharField(widget=forms.EmailInput, validators=[validators.EmailValidator(message="Enter valid email")])
+    age = forms.IntegerField(validators=[validators.MaxValueValidator(34, message="age must be maximum 34"),
+                    validators.MinValueValidator(24, message="age must be at least 24")])
+    file = forms.FileField(validators=[validators.FileExtensionValidator(allowed_extensions=['pdf','png'],message="Only pdf and png files are allowed")])
+
+    
