@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Model Form</title>
+</head>
+
+<body>
+    <h1 class="text-center">Model Form</h1>
+
+
+    {% for item in Data %}
+    <p>
+        Auto Field: {{ item.auto_field }}<br>
+    </p>
+    <p>
+        Big Integer Field: {{ item.big_integer_field }}<br> 
+    </p>
+    <p>
+        Binary Field: {{ item.binary_field }}<br>
+    </p>
+    <p>
+        Boolean Field: {{ item.boolean_field }}<br>
+    </p>
+    <p>
+        Char Field: {{ item.char_field }}<br>
+    </p>
+    <p>
+        Date Field: {{ item.date_field }}<br>
+    </p>
+    <p>
+        Date Time Field: {{ item.date_time_field }}<br>
+    </p>
+    <p>
+        Decimal Field: {{ item.decimal_field }}<br>
+    </p>
+    <p>
+        Duration Field: {{ item.duration_field }}<br>
+    </p>
+    <p>
+        Email Field: {{ item.email_field }}<br>
+    </p>
+    <p>
+        Float Field: {{ item.float_field }}<br>
+    </p>
+    <p>
+        Generic IP Address Field: {{ item.generic_ip_address_field }}<br>
+    </p>
+    <p>
+        Integer Field: {{ item.integer_field }}<br>
+    </p>
+    <p>
+        JSON Field: {{ item.json_field }}<br>
+    </p>
+    <p>
+        Positive Big Integer Field: {{ item.positive_big_integer_field }}<br>
+    </p>
+    <p>
+        Positive Integer Field: {{ item.positive_integer_field }}<br>
+    </p>
+    <p>
+        Positive Small Integer Field: {{ item.positive_small_integer_field }}<br>
+    </p>
+    <p>
+        Slug Field: {{ item.slug_field }}<br>
+    </p>
+    <p>
+        Small Integer Field: {{ item.small_integer_field }}<br>
+    </p>
+    <p>
+        Text Field: {{ item.text_field }}<br>
+    </p>
+    <p>
+        Time Field: {{ item.time_field }}<br>
+    </p>
+    <p>
+        URL Field: {{ item.url_field }}<br>
+    </p>
+    <p>
+        UUID Field: {{ item.uuid_field }}<br><br>
+    </p>
+   
+    {% endfor %}
+
+
+</body>
+
+</html>
