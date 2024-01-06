@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<div>
+            {% if messages %}
+                {% for m in messages %}
+                    <div class="alert alert-warning" role="alert">
+                        {{m}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+      <h2 style="text-align: center;">Profile</h2>
+      <h3 style="text-align: center;">USER:  {{user}}</h3>
+</div>
+  
+   
+{% endblock %}

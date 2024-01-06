@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+            {% if messages %}
+                {% for m in messages %}
+                    <div class="alert alert-warning" role="alert">
+                        {{m}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+    <h2 style="text-align: center;">Welcome Django Authentication</h2>
+    <h2 style="text-align: center;">Home</h2>
+{% endblock %}
