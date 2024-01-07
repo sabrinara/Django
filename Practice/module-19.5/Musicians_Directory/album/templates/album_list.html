@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center m-5">Album List</h1>
+
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Album Name</th>
+                <th>Musician</th>
+                <th>Release Date</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for a in albums %}
+            <tr>
+                <td>{{ a.id }}</td>
+                <td>{{ a.album_name }}</td>
+                <td>{{ a.musician }}</td>
+                <td>{{ a.release_date|date:"d-M-Y" }}</td>
+                <td>{{ a.rating }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
